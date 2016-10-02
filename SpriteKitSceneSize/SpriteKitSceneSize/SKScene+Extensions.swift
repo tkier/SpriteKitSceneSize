@@ -26,7 +26,7 @@ extension SKScene {
     // Given a point where the y property is a distance from the top of the view, 
     // returns a point in the scene coordinate system for that location.
     //
-    func positionFromTop(pt: CGPoint) -> CGPoint {
+    func positionFromTop(_ pt: CGPoint) -> CGPoint {
         
         var result = pt
         result.y = viewTop() - result.y
@@ -37,7 +37,7 @@ extension SKScene {
     // Given a point where the y property is a distance from the bottom of the view,
     // returns a point in the scene coordinate system for that location.
     //
-    func positionFromBottom(pt: CGPoint) -> CGPoint {
+    func positionFromBottom(_ pt: CGPoint) -> CGPoint {
         
         var result = pt
         result.y += viewBottom()
@@ -49,7 +49,7 @@ extension SKScene {
     //
     func viewTop() -> CGFloat {
         
-        return convertPointFromView(CGPointZero).y
+        return convertPoint(fromView: CGPoint.zero).y
     }
     
     //
@@ -59,7 +59,7 @@ extension SKScene {
         
         guard let view = view else { return 0.0 }
         
-        return convertPointFromView(CGPoint(x: 0.0, y: view.bounds.size.height)).y
+        return convertPoint(fromView: CGPoint(x: 0.0, y: view.bounds.size.height)).y
     }
 
 }

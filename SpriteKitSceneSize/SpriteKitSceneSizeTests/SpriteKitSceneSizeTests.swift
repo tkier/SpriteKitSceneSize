@@ -19,7 +19,6 @@
 //  limitations under the License.
 
 import XCTest
-@testable import SpriteKitSceneSize
 
 class SpriteKitSceneSizeTests: XCTestCase {
     
@@ -40,7 +39,7 @@ class SpriteKitSceneSizeTests: XCTestCase {
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
-        self.measureBlock {
+        self.measure() {
             // Put the code you want to measure the time of here.
         }
     }

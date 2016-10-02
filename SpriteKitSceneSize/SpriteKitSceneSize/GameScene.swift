@@ -22,18 +22,18 @@ import SpriteKit
 
 class GameScene: SKScene {
     
-    override func didMoveToView(view: SKView) {
+    override func didMove(to view: SKView) {
         
         let backgroundImage = SKSpriteNode(imageNamed: "background")
-        backgroundImage.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame))
+        backgroundImage.position = CGPoint(x:self.frame.midX, y:self.frame.midY)
         self.addChild(backgroundImage)
 
         let score = SKLabelNode(fontNamed:"HelveticaNeue-Bold")
         score.text = "Score: 10,000"
-        score.fontColor = UIColor.redColor()
+        score.fontColor = UIColor.red
         score.fontSize = 45
-        score.horizontalAlignmentMode = .Left
-        score.verticalAlignmentMode = .Top
+        score.horizontalAlignmentMode = .left
+        score.verticalAlignmentMode = .top
         score.zPosition = 10
         score.position = positionFromTop(CGPoint(x: 30.0, y: 25.0))
         self.addChild(score)
@@ -44,7 +44,7 @@ class GameScene: SKScene {
         self.addChild(pauseButton)
     }
        
-    override func update(currentTime: CFTimeInterval) {
+    override func update(_ currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
     }
 }
